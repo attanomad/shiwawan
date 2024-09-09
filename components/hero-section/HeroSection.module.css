@@ -1,0 +1,19 @@
+.char-1 {
+  transform: translateY(-5px);
+}
+
+.char-2 {
+  transform: translateY(11px);
+}
+
+.char-4 {
+  transform: translateY(12px);
+}
+
+.char-6 {
+  transform: translateY(24px);
+}
+
+.char-7 {
+  transform: translateY(3px);
+}
