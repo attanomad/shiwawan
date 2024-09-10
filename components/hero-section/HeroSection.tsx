@@ -33,7 +33,10 @@ export default function HeroSection() {
       <DotTwoSvg className="absolute right-[32.85px] top-[131px] text-text-primary" />
       <div className="absolute left-[114px] top-[155px] text-[11.25rem] font-bold text-[hsl(133,_100,_20)] opacity-[.05] tracking-[0.15em] transform rotate-[3.91deg]">
         {content.bgText.split("").map((char, idx) => (
-          <span className={styles[`char-${idx}`] + " inline-block"}>
+          <span
+            key={idx}
+            className={styles[`char-${idx}`] + " inline-block"}
+          >
             {char.toUpperCase()}
           </span>
         ))}
