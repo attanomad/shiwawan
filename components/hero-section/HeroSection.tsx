@@ -37,7 +37,7 @@ export default function HeroSection() {
         {content.bgText.split("").map((char, idx) => (
           <span
             key={idx}
-            className={styles[`char-${idx}`] + " inline-block"}
+            className={styles[`char-${idx}`] || "" + " inline-block"}
           >
             {char.toUpperCase()}
           </span>
