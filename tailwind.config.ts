@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -14,6 +15,7 @@ const config: Config = {
           one: "#6F00E5",
           two: "#5056FF",
           three: "#A8F0B7",
+          four: "#C1FFCE",
         },
         text: {
           primary: "#00330B",
@@ -34,6 +36,14 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addBase, theme }: PluginAPI) {
+      addBase({
+        ":root": {
+          "--color-accent-four": theme("colors.accent.four"),
+        },
+      });
+    },
+  ],
 };
 export default config;
