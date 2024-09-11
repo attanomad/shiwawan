@@ -12,7 +12,7 @@ const content = {
 };
 export default function Footer() {
   return (
-    <div className="flex justify-between items-end px-16 py-32 bg-accent-five text-white">
+    <footer className="flex justify-between items-end px-16 py-32 bg-accent-five text-white">
       <div>
         <p className="font-bold text-2xl">{content.social.title}:</p>
         <ul className="text-xl mt-[10px]">
@@ -24,6 +24,6 @@ export default function Footer() {
         </ul>
       </div>
       <p className="text-base">{content.copyright}</p>
-    </div>
+    </footer>
   );
 }
