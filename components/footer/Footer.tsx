@@ -12,10 +12,10 @@ const content = {
 };
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-end px-16 py-32 bg-accent-five text-white">
+    <footer className="flex flex-col gap-8 md:flex-row justify-between items-start md:items-end px-8 xl:px-16 py-16 xl:py-32 bg-accent-five text-white">
       <div>
-        <p className="font-bold text-2xl">{content.social.title}:</p>
-        <ul className="text-xl mt-[10px]">
+        <p className="font-bold text-xl xl:text-2xl">{content.social.title}:</p>
+        <ul className="text-base xl:text-xl mt-[10px]">
           {content.social.socialList.map((s) => (
             <li key={s.id}>
               <a href={s.url}>{s.title}</a>
