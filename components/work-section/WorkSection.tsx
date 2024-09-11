@@ -85,8 +85,9 @@ export default function WorkSection() {
           // freeMode={{ enabled: true, sticky: true }}
           mousewheel={{
             enabled: true,
-            forceToAxis: true,
+            // forceToAxis: true,
             thresholdDelta: 20,
+            releaseOnEdges: true,
           }}
           coverflowEffect={{
             rotate: 0,
@@ -168,7 +169,7 @@ const WorkSlide = ({ id, title, tagline, imageUrl, cta }: Work) => {
   return (
     <div
       className={`${
-        isActive ? "" : "relative grayscale opacity-80 blur-[2px] "
+        isActive ? "" : "relative grayscale-[0.5] opacity-80 blur-[1.5px] "
       }transition-[width] overflow-hidden delay-100 duration-500 flex flex-col justify-end gap-[0.625rem] h-[500px] relative rounded-[1.75rem] bg-cover bg-center`}
       style={{
         width: `${isActive ? 614 : 307}px`,
