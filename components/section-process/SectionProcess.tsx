@@ -55,11 +55,11 @@ export default function SectionProcess() {
       title={content.title}
       titleBg={content.titleBg}
     >
-      <div className="grid grid-cols-2 px-16 gap-16">
+      <div className="grid md:grid-cols-2 px-8 md:px-12 xl:px-16 gap-8 md:gap-12 xl:gap-16">
         {content.processList.map((p, idx) => (
           <div
             key={p.id}
-            className={`flex flex-col px-8 py-16 gap-[43px] w-full max-w-[500px] rounded-3xl border-[3px] border-black ${
+            className={`flex flex-col px-4 md:px-6 xl:px-8 py-8 md:py-12 xl:py-16 gap-6 md:gap-9 xl:gap-[43px] w-full max-w-[500px] rounded-3xl border-[2px] xl:border-[3px] border-black ${
               idx % 2 === 0 ? "justify-self-end" : "justify-self-start"
             }`}
           >
@@ -73,17 +73,17 @@ export default function SectionProcess() {
             ></div>
             <div className="flex flex-col gap-4">
               <div className="relative">
-                <h3 className="font-semibold text-[2rem]">
+                <h3 className="font-semibold text-2xl xl:text-[2rem]">
                   0{idx + 1} {p.title}
                 </h3>
                 <span
-                  className={`absolute bottom-0 right-0 rotate-[10deg] font-bold text-[4rem] text-accent-six ${caveatFont.className}`}
+                  className={`absolute bottom-0 right-0 rotate-[10deg] font-bold text-[2.5rem] xl:text-[4rem] text-accent-six ${caveatFont.className}`}
                 >
                   {p.titleBg}
                 </span>
               </div>
-              <div className="h-[3px] w-full bg-black"></div>
-              <p className="text-xl">{p.description}</p>
+              <div className="h-[2px] xl:h-[3px] w-full bg-black"></div>
+              <p className="text-base xl:text-xl">{p.description}</p>
             </div>
           </div>
         ))}
