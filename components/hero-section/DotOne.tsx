@@ -3,9 +3,9 @@ import { SVGProps } from "react";
 const DotOneSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={197}
-    height={197}
     fill="none"
+    viewBox="0 0 197 196.79"
+    preserveAspectRatio="xMidYMid meet"
     {...props}
   >
     <path

@@ -2,9 +2,9 @@ import { SVGProps } from "react";
 const DotTwoSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={216}
-    height={216}
     fill="none"
+    viewBox="0 0 215.15 215.15"
+    preserveAspectRatio="xMidYMid meet"
     {...props}
   >
     <path
