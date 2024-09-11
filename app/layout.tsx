@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const notoSansThai = Noto_Sans_Thai({ subsets: ["thai"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-en" });
+const notoSansThai = Noto_Sans_Thai({
+  subsets: ["thai"],
+  variable: "--font-th",
+});
 
 export const metadata: Metadata = {
   title: "Shiwawan Studio",
@@ -17,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${notoSansThai.className}`}>
+      <body
+        className={`${inter.variable} ${notoSansThai.variable} ${notoSansThai.className}`}
+      >
         {children}
       </body>
     </html>
