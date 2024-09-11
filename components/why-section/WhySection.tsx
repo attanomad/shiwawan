@@ -73,13 +73,13 @@ function ReasonItem({
 }) {
   return (
     <div
-      className={`flex px-8 py-16 gap-8 max-w-screen-xl mx-auto${
-        reverse ? " flex-row-reverse" : ""
+      className={`flex flex-col md:flex-row p-8 md:px-8 md:py-16 gap-8 max-w-screen-xl mx-auto${
+        reverse ? " md:flex-row-reverse" : ""
       }`}
     >
       <div className="flex justify-center items-center w-full">
         <div
-          className="bg-cover bg-center size-[450px]"
+          className="bg-cover bg-center size-[250px] sm:size-[400px] max-size-[450px]"
           style={{
             backgroundImage: `url(${
               imageUrl || `https://picsum.photos/600/600?attnmd=${id}`
@@ -88,13 +88,13 @@ function ReasonItem({
         ></div>
       </div>
       <div
-        className={`flex flex-col gap-4 w-full text-text-primary${
-          reverse ? " text-right" : ""
+        className={`flex flex-col gap-2 sm:gap-4 w-full text-text-primary${
+          reverse ? " md:text-right" : ""
         }`}
       >
-        <p className="font-semibold text-xl">{tagline}</p>
-        <p className="font-medium text-[2rem]">{title}</p>
-        <p className="text-xl">{description}</p>
+        <p className="font-semibold text-lg sm:text-xl">{tagline}</p>
+        <p className="font-medium text-2xl sm:text-[2rem]">{title}</p>
+        <p className="text-lg sm:text-xl">{description}</p>
       </div>
     </div>
   );
