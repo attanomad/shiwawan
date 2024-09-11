@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import HeroSection from "@/components/hero-section/HeroSection";
+import SectionCta from "@/components/section-cta/SectionCta";
 import TestimonialsSection from "@/components/testimonials-section/TestimonialsSection";
 import WhySection from "@/components/why-section/WhySection";
 import WorkSection from "@/components/work-section/WorkSection";
@@ -11,7 +12,10 @@ export default function Home() {
       <WorkSection />
       <TestimonialsSection />
       <WhySection />
-      <Footer />
+      <div>
+        <SectionCta />
+        <Footer />
+      </div>
     </div>
   );
 }

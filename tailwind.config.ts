@@ -17,6 +17,7 @@ const config: Config = {
           three: "#A8F0B7",
           four: "#C1FFCE",
           five: "#0C3315",
+          six: "#FFE3C2",
         },
         text: {
           primary: "#00330B",
