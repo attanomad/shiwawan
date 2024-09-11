@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Section from "../section/Section";
 
 interface Testimonial {
   id: string;
@@ -122,13 +123,10 @@ export default function TestimonialsSection() {
   const testimonialChunkList = chunkArray(content.testimonialList, 3);
 
   return (
-    <section className="relative flex flex-col gap-y-32 py-24">
-      <h2 className="mx-auto text-center text-5xl max-w-[486px] font-bold text-text-primary leading-normal">
-        {content.title}
-      </h2>
-      <div className="absolute flex justify-center overflow-hidden -z-10 tracking-[.35em] top-0 left-0 w-full text-accent-three text-sectionTitleBg font-black opacity-40 uppercase font-en">
-        <span>{content.titleBg}</span>
-      </div>
+    <Section
+      title={content.title}
+      titleBg={content.titleBg}
+    >
       <div className="grid grid-rows-1 grid-cols-3 px-16 gap-x-8 bg-[radial-gradient(closest-side,var(--color-accent-four)_0%,white_100%)]">
         {testimonialChunkList.map((chunk) => (
           <div className="flex flex-col gap-8">
@@ -141,33 +139,7 @@ export default function TestimonialsSection() {
           </div>
         ))}
       </div>
-      {/* <div className="flex gap-8 px-16">
-        {content.testimonialList.map((t) => (
-          <div
-            key={t.id}
-            className="flex basis-1/4 shrink-0 flex-col p-8 gap-8 bg-white rounded-2xl"
-          >
-            <p>{t.testimonial}</p>
-            <div className="flex gap-4 items-center">
-              <Image
-                src={
-                  t.author.profileImageUrl ||
-                  `https://picsum.photos/128/128?attnmd=${t.id}`
-                }
-                alt={t.author.name}
-                width={64}
-                height={64}
-                className="rounded-full size-16"
-              />
-              <div>
-                <p className="font-bold">{t.author.name}</p>
-                <p>{t.author.role}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div> */}
-    </section>
+    </Section>
   );
 }
 

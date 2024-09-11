@@ -7,6 +7,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/mousewheel";
 import { EffectCoverflow, FreeMode, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
+import Section from "../section/Section";
 import EffectShiwawan from "./shiwawan-effect";
 import "./styles.css";
 
@@ -69,14 +70,10 @@ const content = {
 
 export default function WorkSection() {
   return (
-    <section className="relative flex flex-col gap-y-32 py-24">
-      <h2 className="text-center text-5xl font-bold text-text-primary leading-normal">
-        {content.title}
-      </h2>
-      <span className="absolute -z-10 tracking-[.35em] top-0 w-full text-center text-accent-three text-sectionTitleBg font-black opacity-40 uppercase font-en">
-        {content.titleBg}
-      </span>
-
+    <Section
+      title={content.title}
+      titleBg={content.titleBg}
+    >
       <div>
         <Swiper
           slidesPerView={"auto"}
@@ -126,28 +123,8 @@ export default function WorkSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* <ul className="flex gap-[1.125rem] px-16">
-          {content.workList.map((w) => (
-            <li
-              key={w.id}
-              className={`flex flex-col justify-end gap-[0.625rem] w-[307px] h-[500px] relative rounded-[1.75rem] bg-cover bg-center`}
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,.6)), url(${w.imageUrl})`,
-              }}
-            >
-              <div className="flex flex-col justify-center items-center gap-8 p-8 text-white">
-                <p className="w-full text-left font-medium text-[1.75rem]">
-                  {w.title}
-                </p>
-                <button className="w-full text-left px-4 py-2 text-base border border-white rounded-[1.75rem]">
-                  {w.cta}
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul> */}
       </div>
-    </section>
+    </Section>
   );
 }
 

@@ -1,3 +1,5 @@
+import Section from "../section/Section";
+
 interface Reason {
   id: string;
   title: string;
@@ -47,13 +49,10 @@ const content = {
 
 export default function WhySection() {
   return (
-    <section className="relative flex flex-col gap-y-32 py-24">
-      <h2 className="mx-auto text-center text-5xl max-w-[486px] font-bold text-text-primary leading-normal">
-        {content.title}
-      </h2>
-      <div className="absolute flex justify-center overflow-hidden -z-10 tracking-[.35em] top-0 left-0 w-full text-accent-three text-sectionTitleBg font-black opacity-40 uppercase font-en">
-        <span>{content.titleBg}</span>
-      </div>
+    <Section
+      title={content.title}
+      titleBg={content.titleBg}
+    >
       {content.reasonList.map((r, idx) => (
         <ReasonItem
           key={r.id}
@@ -61,7 +60,7 @@ export default function WhySection() {
           reverse={idx % 2 > 0}
         />
       ))}
-    </section>
+    </Section>
   );
 }
 
