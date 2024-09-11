@@ -13,6 +13,7 @@ const config: Config = {
         accent: {
           one: "#6F00E5",
           two: "#5056FF",
+          three: "#A8F0B7",
         },
         text: {
           primary: "#00330B",
@@ -20,6 +21,11 @@ const config: Config = {
       },
       fontSize: {
         hero: `${72 / 16}rem`,
+        sectionTitleBg: `8.75rem`,
+      },
+      fontFamily: {
+        en: ["var(--font-en)"],
+        th: ["var(--font-th)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
