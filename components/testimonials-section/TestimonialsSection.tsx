@@ -127,9 +127,13 @@ export default function TestimonialsSection() {
       title={content.title}
       titleBg={content.titleBg}
     >
-      <div className="grid grid-rows-1 grid-cols-3 px-16 gap-x-8 bg-[radial-gradient(closest-side,var(--color-accent-four)_0%,white_100%)]">
-        {testimonialChunkList.map((chunk) => (
-          <div className="flex flex-col gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-16 gap-4 md:gap-8 bg-[radial-gradient(closest-side,var(--color-accent-four)_0%,white_100%)]">
+        {testimonialChunkList.map((chunk, idx) => (
+          <div
+            className={`flex flex-col gap-4 md:gap-8${
+              idx === testimonialChunkList.length - 1 ? " hidden lg:block" : ""
+            }`}
+          >
             {chunk.map((t) => (
               <TestimonialCard
                 key={t.id}
@@ -145,7 +149,7 @@ export default function TestimonialsSection() {
 
 function TestimonialCard(t: Testimonial) {
   return (
-    <div className="flex flex-col p-8 gap-8 bg-white rounded-2xl">
+    <div className="flex flex-col p-4 gap-4 md:p-8 md:gap-8 bg-white rounded-2xl">
       <p className="text-base">{t.testimonial}</p>
       <div className="flex gap-4 items-center">
         <Image
