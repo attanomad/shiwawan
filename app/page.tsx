@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import HeroSection from "@/components/hero-section/HeroSection";
 import TestimonialsSection from "@/components/testimonials-section/TestimonialsSection";
 import WhySection from "@/components/why-section/WhySection";
@@ -10,6 +11,7 @@ export default function Home() {
       <WorkSection />
       <TestimonialsSection />
       <WhySection />
+      <Footer />
     </div>
   );
 }
