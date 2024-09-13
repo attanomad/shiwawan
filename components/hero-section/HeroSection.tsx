@@ -33,15 +33,17 @@ export default function HeroSection() {
       </div>
       <DotOneSvg className="absolute w-[4.5rem] sm:w-24 md:w-32 lg:w-40 xl:w-[197px] left-3 sm:left-10 md:left-16 lg:left-24 xl:left-[85px] top-[270px] md:top-[200px] xl:top-[461px] text-text-primary" />
       <DotTwoSvg className="absolute w-[4.5rem] sm:w-24 md:w-32 lg:w-40 xl:w-[215px] right-2 sm:right-8 md:right-12 lg:right-20 xl:right-[32.85px] top-14 sm:top-20 md:top-24 xl:top-[131px] text-text-primary" />
-      <div className="absolute w-full text-center left-0 xl:left-[114px] top-28 xl:top-[155px] text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11.25rem] font-bold text-[hsl(133,_100,_20)] opacity-[.05] tracking-[0.15em] transform rotate-[3.91deg]">
-        {content.bgText.split("").map((char, idx) => (
-          <span
-            key={idx}
-            className={styles[`char-${idx}`] || "" + " inline-block"}
-          >
-            {char.toUpperCase()}
-          </span>
-        ))}
+      <div className="absolute w-full text-center left-0 top-0 pt-[117px] md-[pt-80px] xl:pt-[155px] text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11.25rem] font-bold text-[hsl(133,_100,_20)] opacity-[.05] tracking-[0.15em] overflow-hidden">
+        <div className="flex justify-center transform rotate-[3.91deg]">
+          {content.bgText.split("").map((char, idx) => (
+            <span
+              key={idx}
+              className={styles[`char-${idx}`] || "" + " inline-block"}
+            >
+              {char.toUpperCase()}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
