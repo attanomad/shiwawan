@@ -130,6 +130,7 @@ export default function TestimonialsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-16 gap-4 md:gap-8 bg-[radial-gradient(closest-side,var(--color-accent-four)_0%,white_100%)]">
         {testimonialChunkList.map((chunk, idx) => (
           <div
+            key="idx"
             className={`flex flex-col gap-4 md:gap-8${
               idx === testimonialChunkList.length - 1 ? " hidden lg:block" : ""
             }`}
