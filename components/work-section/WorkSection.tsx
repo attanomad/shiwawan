@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/mousewheel";
 import { EffectCoverflow, FreeMode, Mousewheel } from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import Section from "../section/Section";
 import EffectShiwawan from "./shiwawan-effect";
 import "./styles.css";
@@ -129,19 +128,19 @@ export default function WorkSection() {
 }
 
 const WorkSlide = ({ id, title, tagline, imageUrl, cta }: Work) => {
-  const swiper = useSwiper();
+  // const swiper = useSwiper();
   const { isActive } = useSwiperSlide();
 
-  useEffect(() => {
-    if (
-      isActive &&
-      typeof swiper.setTranslate === "function" &&
-      typeof swiper.translate === "number"
-    ) {
-      console.log("ok", swiper);
-      // setTranslate(translate - (614 - 307) / 2);
-    }
-  }, [isActive, swiper.setTranslate, swiper.translate]);
+  // useEffect(() => {
+  //   if (
+  //     isActive &&
+  //     typeof swiper.setTranslate === "function" &&
+  //     typeof swiper.translate === "number"
+  //   ) {
+  //     console.log("ok", swiper);
+  //     // setTranslate(translate - (614 - 307) / 2);
+  //   }
+  // }, [isActive, swiper.setTranslate, swiper.translate]);
 
   return (
     <div
