@@ -1,5 +1,6 @@
 "use client";
 
+import { Work, workList } from "@/entities/works";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -10,61 +11,10 @@ import Section from "../section/Section";
 import EffectShiwawan from "./shiwawan-effect";
 import "./styles.css";
 
-interface Work {
-  id: string;
-  title: string;
-  tagline: string;
-  imageUrl: string;
-  cta: string;
-}
-
 const content = {
   title: "ตัวอย่างผลงานของเรา",
   titleBg: "works",
-  workList: [
-    {
-      id: "1",
-      title: "บ้านเพชรจัดกระดูก",
-      tagline: "Lorem ipsum dolor sit amet",
-      imageUrl: "",
-      cta: "ดูเพิ่มเติม",
-    },
-    {
-      id: "2",
-      title: "G Fitness",
-      tagline: "Lorem ipsum dolor sit amet",
-      imageUrl: "",
-      cta: "ดูเพิ่มเติม",
-    },
-    {
-      id: "3",
-      title: "Thappraya Real Estate",
-      tagline: "Lorem ipsum dolor sit amet",
-      imageUrl: "",
-      cta: "ดูเพิ่มเติม",
-    },
-    {
-      id: "4",
-      title: "Hedonism Cafe",
-      tagline: "Lorem ipsum dolor sit amet",
-      imageUrl: "",
-      cta: "ดูเพิ่มเติม",
-    },
-    {
-      id: "5",
-      title: "2 Hedonism Cafe",
-      tagline: "Lorem ipsum dolor sit amet",
-      imageUrl: "",
-      cta: "ดูเพิ่มเติม",
-    },
-    {
-      id: "6",
-      title: "3 Hedonism Cafe",
-      tagline: "Lorem ipsum dolor sit amet",
-      imageUrl: "",
-      cta: "ดูเพิ่มเติม",
-    },
-  ] as Work[],
+  workList,
 };
 
 export default function WorkSection() {
@@ -72,6 +22,7 @@ export default function WorkSection() {
     <Section
       title={content.title}
       titleBg={content.titleBg}
+      id="works"
     >
       <div>
         <Swiper
@@ -127,7 +78,7 @@ export default function WorkSection() {
   );
 }
 
-const WorkSlide = ({ id, title, tagline, imageUrl, cta }: Work) => {
+const WorkSlide = ({ id, slug, title, tagline, imageUrl, cta }: Work) => {
   // const swiper = useSwiper();
   const { isActive } = useSwiperSlide();
 
@@ -158,7 +109,7 @@ const WorkSlide = ({ id, title, tagline, imageUrl, cta }: Work) => {
       <div
         className={`${
           isActive ? "opacity-0 " : ""
-        }transition-[opacity] delay-200 absolute w-full h-full top-0 left-0 z-10 bg-[rgba(0,0,0,.3)]`}
+        }pointer-events-none transition-[opacity] delay-200 absolute w-full h-full top-0 left-0 z-10 bg-[rgba(0,0,0,.3)]`}
       ></div>
       <div className="flex flex-col justify-center items-center gap-8 p-8 text-white">
         <div className="w-full">
@@ -173,7 +124,7 @@ const WorkSlide = ({ id, title, tagline, imageUrl, cta }: Work) => {
         </div>
         {isActive && (
           <Link
-            href={`/works/${id}`}
+            href={`/works/${slug}`}
             className={`transition-[all] delay-500 duration-500 w-full text-left px-4 py-2 text-base border border-white rounded-[1.75rem]${
               isActive ? " bg-white text-text-primary" : ""
             }`}

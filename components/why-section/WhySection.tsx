@@ -52,6 +52,7 @@ export default function WhySection() {
     <Section
       title={content.title}
       titleBg={content.titleBg}
+      id="why"
     >
       {content.reasonList.map((r, idx) => (
         <ReasonItem

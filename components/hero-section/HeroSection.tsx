@@ -28,7 +28,7 @@ export default function HeroSection() {
           {content.cta}
         </button>
         <p className="underline">
-          <Link href="#">{content.subCta}</Link>
+          <Link href="#works">{content.subCta}</Link>
         </p>
       </div>
       <DotOneSvg className="absolute w-[4.5rem] sm:w-24 md:w-32 lg:w-40 xl:w-[197px] left-3 sm:left-10 md:left-16 lg:left-24 xl:left-[85px] top-[270px] md:top-[200px] xl:top-[461px] text-text-primary" />

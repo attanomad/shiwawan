@@ -1,6 +1,4 @@
-import Footer from "@/components/footer/Footer";
 import HeroSection from "@/components/hero-section/HeroSection";
-import SectionCta from "@/components/section-cta/SectionCta";
 import SectionProcess from "@/components/section-process/SectionProcess";
 import TestimonialsSection from "@/components/testimonials-section/TestimonialsSection";
 import WhySection from "@/components/why-section/WhySection";
@@ -14,10 +12,6 @@ export default function Home() {
       <TestimonialsSection />
       <WhySection />
       <SectionProcess />
-      <div>
-        <SectionCta />
-        <Footer />
-      </div>
     </div>
   );
 }

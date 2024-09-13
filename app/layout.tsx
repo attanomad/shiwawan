@@ -1,3 +1,6 @@
+import Footer from "@/components/footer/Footer";
+import NavBar from "@/components/nav-bar/NavBar";
+import SectionCta from "@/components/section-cta/SectionCta";
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
@@ -24,6 +27,9 @@ export default function RootLayout({
         className={`${inter.variable} ${notoSansThai.variable} ${notoSansThai.className}`}
       >
         {children}
+        <SectionCta />
+        <Footer />
+        <NavBar />
       </body>
     </html>
   );

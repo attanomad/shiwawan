@@ -54,6 +54,7 @@ export default function SectionProcess() {
     <Section
       title={content.title}
       titleBg={content.titleBg}
+      id="process"
     >
       <div className="grid md:grid-cols-2 px-8 md:px-12 xl:px-16 gap-8 md:gap-12 xl:gap-16">
         {content.processList.map((p, idx) => (
