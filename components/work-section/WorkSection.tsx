@@ -96,11 +96,13 @@ const WorkSlide = ({ id, slug, title, tagline, imageUrl, cta }: Work) => {
   return (
     <div
       className={`${
-        isActive ? "" : "relative grayscale-[0.5] opacity-80 blur-[1.5px] "
+        isActive
+          ? "w-[339px] md:w-[614px]"
+          : "w-[226px] md:w-[307px] relative grayscale-[0.5] opacity-80 blur-[1.5px] "
       }transition-[width] overflow-hidden delay-100 duration-500 flex flex-col justify-end gap-[0.625rem] h-[500px] relative rounded-[1.75rem] bg-cover bg-center`}
       style={{
-        width: `${isActive ? 614 : 307}px`,
-        // width: "307px",
+        // * Considering using <Image /> instead for lazy loading
+        // * and SEO
         backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,.6)), url(${
           imageUrl || `https://picsum.photos/1200/1000?attnmd=${id}`
         })`,
