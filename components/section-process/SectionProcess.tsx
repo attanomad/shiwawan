@@ -1,55 +1,13 @@
+import { SupportedLocale } from "@/entities/common";
+import { processList } from "@/entities/process";
 import { Caveat } from "next/font/google";
 import Section from "../section/Section";
 
 const caveatFont = Caveat({ subsets: ["latin"] });
 
-interface Process {
-  id: string;
-  title: string;
-  titleBg: string;
-  description: string;
-  imageUrl: string;
-}
-const content = {
-  title: "การทำงานของชิวาวัน",
-  titleBg: "process",
-  processList: [
-    {
-      id: "1",
-      title: "รวมความต้องการ",
-      titleBg: "Requirements",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Ultrices malesuada dolor turpis augue pretium etiam consequat mauris sagittis. Fringilla magna quisque quis mauris sit neque.",
-      imageUrl: "",
-    },
-    {
-      id: "2",
-      title: "ออกแบบ",
-      titleBg: "Design",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Ultrices malesuada dolor turpis augue pretium etiam consequat mauris sagittis. Fringilla magna quisque quis mauris sit neque.",
-      imageUrl: "",
-    },
-    {
-      id: "3",
-      title: "พัฒนา",
-      titleBg: "Develop",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Ultrices malesuada dolor turpis augue pretium etiam consequat mauris sagittis. Fringilla magna quisque quis mauris sit neque.",
-      imageUrl: "",
-    },
-    {
-      id: "4",
-      title: "ส่งมอบ",
-      titleBg: "Launch",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Ultrices malesuada dolor turpis augue pretium etiam consequat mauris sagittis. Fringilla magna quisque quis mauris sit neque.",
-      imageUrl: "",
-    },
-  ] as Process[],
-};
+export default async function SectionProcess() {
+  const content = await fetchPageContent(SupportedLocale.Th);
 
-export default function SectionProcess() {
   return (
     <Section
       title={content.title}
@@ -91,4 +49,14 @@ export default function SectionProcess() {
       </div>
     </Section>
   );
+}
+
+async function fetchPageContent(locale?: SupportedLocale) {
+  return {
+    title: "การทำงานของชิวาวัน",
+    titleBg: "process",
+    processList: locale
+      ? processList.filter((p) => p.locale === locale)
+      : processList,
+  };
 }
