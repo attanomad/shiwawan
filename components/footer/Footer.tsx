@@ -26,7 +26,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <p className="text-xs">{content.copyright}</p>
+        <p className="text-xs md:text-base">{content.copyright}</p>
       </div>
 
       {/* Nav Bar Placeholder */}
