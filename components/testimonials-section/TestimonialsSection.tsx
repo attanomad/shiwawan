@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
           <div
             key="idx"
             className={`flex flex-col gap-4 md:gap-8${
-              idx === testimonialChunkList.length - 1 ? " hidden lg:block" : ""
+              idx === testimonialChunkList.length - 1 ? " hidden lg:flex" : ""
             }`}
           >
             {chunk.map((t) => (
