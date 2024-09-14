@@ -1,22 +1,11 @@
-import {
-  Testimonial,
-  testimonialList,
-  TestimonialLocale,
-} from "@/entities/testimonials";
+import { SupportedLocale } from "@/entities/common";
+import { Testimonial, testimonialList } from "@/entities/testimonials";
 import Image from "next/image";
 import Section from "../section/Section";
 
-const content = {
-  title: "นี่คือคำบอกเล่าจากลูกค้าที่น่ารักของชิวาวัน",
-  titleBg: "testimonials",
-  testimonialList,
-};
-
-export default function TestimonialsSection() {
-  const testimonialChunkList = chunkArray(
-    fetchTestimonialList(TestimonialLocale.Th),
-    3
-  );
+export default async function TestimonialsSection() {
+  const content = await fetchPageContent(SupportedLocale.Th);
+  const testimonialChunkList = chunkArray(content.testimonialList, 3);
 
   return (
     <Section
@@ -80,8 +69,12 @@ function chunkArray<T = unknown>(
   return chunkedArr;
 }
 
-function fetchTestimonialList(locale?: TestimonialLocale) {
-  if (!locale) return testimonialList;
-
-  return testimonialList.filter((t) => t.locale === locale);
+async function fetchPageContent(locale?: SupportedLocale) {
+  return {
+    title: "นี่คือคำบอกเล่าจากลูกค้าที่น่ารักของชิวาวัน",
+    titleBg: "testimonials",
+    testimonialList: locale
+      ? testimonialList.filter((t) => t.locale === locale)
+      : testimonialList,
+  };
 }

@@ -1,11 +1,8 @@
-export enum TestimonialLocale {
-  En = "en",
-  Th = "th",
-}
+import { SupportedLocale } from "./common";
 
 export interface Testimonial {
   id: string;
-  locale: TestimonialLocale;
+  locale: SupportedLocale;
   author: {
     name: string;
     role: string;
@@ -17,7 +14,7 @@ export interface Testimonial {
 export const testimonialList: Testimonial[] = [
   {
     id: "1",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Sarah Mitchell",
       role: "Marketing Director, Bright Ideas Co.",
@@ -28,7 +25,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "2",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Tom Richards",
       role: "CEO, EcoSolutions",
@@ -39,7 +36,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "3",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Emily Dawson",
       role: "Founder, The Artisanal Bakery",
@@ -50,7 +47,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "4",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "David Hernandez",
       role: "Operations Manager, FastTech Solutions",
@@ -61,7 +58,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "5",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Jessica Lin",
       role: "Head of Digital Marketing, Zen Retreats",
@@ -72,7 +69,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "6",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Mike O'Leary",
       role: "Product Manager, Stellar Apps",
@@ -83,7 +80,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "7",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Lily Nguyen",
       role: "Owner, Nguyen Family Restaurant",
@@ -94,7 +91,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "8",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "James Pritchard",
       role: "CTO, InnovateTech",
@@ -105,7 +102,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "9",
-    locale: TestimonialLocale.En,
+    locale: SupportedLocale.En,
     author: {
       name: "Rachel Adams",
       role: "Content Creator, Rachel’s Corner",
@@ -118,7 +115,7 @@ export const testimonialList: Testimonial[] = [
   // Thai
   {
     id: "10",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "สมชาย วิจิตร",
       role: "ผู้จัดการฝ่ายการตลาด, บ.ไทยพัฒนา",
@@ -129,7 +126,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "11",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "นฤมล จิตรเจริญ",
       role: "CEO, ผลิตภัณฑ์ไทยธรรม",
@@ -140,7 +137,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "12",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "วิชัย ประเสริฐ",
       role: "เจ้าของร้าน, ครัวไทย",
@@ -151,7 +148,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "13",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "กาญจนา รุ่งเรือง",
       role: "หัวหน้าฝ่ายประชาสัมพันธ์, บ.จันทร์เจ้า",
@@ -162,7 +159,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "14",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "ปรีชา ชาญชัย",
       role: "ผู้จัดการฝ่าย IT, นิวโปรเจค",
@@ -173,7 +170,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "15",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "วาสนา ทองสุข",
       role: "เจ้าของธุรกิจ, ช็อปออนไลน์วาสนา",
@@ -184,7 +181,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "16",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "อุดม สุขสำราญ",
       role: "CTO, TechMove",
@@ -195,7 +192,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "17",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "พรนภา พิพัฒน์",
       role: "เจ้าของร้านอาหาร, ครัวมะลิ",
@@ -206,7 +203,7 @@ export const testimonialList: Testimonial[] = [
   },
   {
     id: "18",
-    locale: TestimonialLocale.Th,
+    locale: SupportedLocale.Th,
     author: {
       name: "จตุพล วรรณศิลป์",
       role: "นักออกแบบกราฟิก, Freelance",
