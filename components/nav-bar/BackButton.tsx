@@ -11,7 +11,7 @@ export default function BackButton() {
     <>
       {pathname !== "/" && (
         <button onClick={() => router.back()}>
-          <ArrowLeft className="size-6" />
+          <ArrowLeft className="size-6 md:size-8 drop-shadow-[0_0_5px_rgba(0,0,0,.5)]" />
         </button>
       )}
     </>
