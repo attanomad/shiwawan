@@ -20,7 +20,7 @@ const menuList: NavMenu[] = [
 
 export default function NavBar() {
   return (
-    <div className="fixed left-0 bottom-0 w-full flex justify-center items-center">
+    <div className="fixed left-0 bottom-0 w-full flex justify-center items-center z-[9999]">
       <nav className="absolute bottom-4 flex items-center py-2 px-3 rounded-[2rem] bg-[#C7C7C7]/80 text-white">
         <ul className="flex justify-center items-center gap-2 text-xs leading-normal">
           <BackButton />
