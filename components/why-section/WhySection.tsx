@@ -1,53 +1,10 @@
+import { SupportedLocale } from "@/entities/common";
+import { Reason, reasonList } from "@/entities/why";
 import Section from "../section/Section";
 
-interface Reason {
-  id: string;
-  title: string;
-  tagline: string;
-  description: string;
-  imageUrl: string;
-}
+export default async function WhySection() {
+  const content = await fetchPageContent(SupportedLocale.Th);
 
-const content = {
-  title: "ทำไมต้องเป็นชิวาวัน?",
-  titleBg: "why",
-  reasonList: [
-    {
-      id: "1",
-      title: "ทุกพิกเซลถูกออกแบบอย่างพิถีพิถัน",
-      tagline: "คิดมาแล้วอย่างดี",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Penatibus adipiscing facilisis a dolor habitant cras nec massa vel. Aliquam at eget lacus amet nulla molestie. Duis aliquam porta in magna sed nullam vehicula auctor. Aliquet cursus venenatis ac et.",
-      imageUrl: "",
-    },
-    {
-      id: "2",
-      title: "โหลดเร็วทันใจไม่ต้องรอนาน",
-      tagline: "ไม่ต้องกลัวลูกค้าหนีเพราะโหลดนาน",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Penatibus adipiscing facilisis a dolor habitant cras nec massa vel. Aliquam at eget lacus amet nulla molestie. Duis aliquam porta in magna sed nullam vehicula auctor. Aliquet cursus venenatis ac et.",
-      imageUrl: "",
-    },
-    {
-      id: "3",
-      title: "รองรับ SEO ตั้งแต่ก้าวแรก",
-      tagline: "เพิ่มโอกาสติดหน้าแรกบน Google",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Penatibus adipiscing facilisis a dolor habitant cras nec massa vel. Aliquam at eget lacus amet nulla molestie. Duis aliquam porta in magna sed nullam vehicula auctor. Aliquet cursus venenatis ac et.",
-      imageUrl: "",
-    },
-    {
-      id: "4",
-      title: "ดูแลให้ ไม่ต้องทำเอง",
-      tagline: "ให้คุณโฟกัสกับธุรกิจได้มากขึ้น",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Penatibus adipiscing facilisis a dolor habitant cras nec massa vel. Aliquam at eget lacus amet nulla molestie. Duis aliquam porta in magna sed nullam vehicula auctor. Aliquet cursus venenatis ac et.",
-      imageUrl: "",
-    },
-  ] as Reason[],
-};
-
-export default function WhySection() {
   return (
     <Section
       title={content.title}
@@ -99,4 +56,14 @@ function ReasonItem({
       </div>
     </div>
   );
+}
+
+async function fetchPageContent(locale?: SupportedLocale) {
+  return {
+    title: "ทำไมต้องเป็นชิวาวัน?",
+    titleBg: "why",
+    reasonList: locale
+      ? reasonList.filter((r) => r.locale === locale)
+      : reasonList,
+  };
 }
