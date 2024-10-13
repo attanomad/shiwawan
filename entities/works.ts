@@ -42,8 +42,8 @@ export const workList: Array<Work> = [
   },
   {
     id: "3",
-    slug: "thappray-real-estate",
-    title: "Thappraya Real Estate",
+    slug: "thapprayaproperty",
+    title: "Thappraya Property",
     tagline: "Lorem ipsum dolor sit amet",
     imageUrl: "/images/works/thappraya-real-estate.jpg",
     cta: "ดูเพิ่มเติม",
