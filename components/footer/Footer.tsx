@@ -13,7 +13,7 @@ const content = {
         url: "https://facebook.com/@shiwawan.web",
       },
       { id: "x", title: "X (Twitter)", url: "https://x.com/@shiwawanweb" },
-      { id: "line", title: "Line", url: "https://line.me/@shiwawan.web" },
+      { id: "line", title: "Line", url: "https://lin.ee/P31hQii" },
     ],
   },
   copyright: "© 2024 All Rights Reserved.",
