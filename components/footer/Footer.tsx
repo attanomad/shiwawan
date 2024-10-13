@@ -2,10 +2,18 @@ const content = {
   social: {
     title: "พบเราได้ที่",
     socialList: [
-      { id: "ig", title: "Instagram", url: "https://instagram.com/@shiwawan" },
-      { id: "fb", title: "Facebook", url: "https://facebook.com/@shiwawan" },
-      { id: "x", title: "X (Twitter)", url: "https://x.com/@shiwawan" },
-      { id: "line", title: "Line", url: "https://line.me/@shiwawan" },
+      {
+        id: "ig",
+        title: "Instagram",
+        url: "https://instagram.com/@shiwawan.web",
+      },
+      {
+        id: "fb",
+        title: "Facebook",
+        url: "https://facebook.com/@shiwawan.web",
+      },
+      { id: "x", title: "X (Twitter)", url: "https://x.com/@shiwawanweb" },
+      { id: "line", title: "Line", url: "https://line.me/@shiwawan.web" },
     ],
   },
   copyright: "© 2024 All Rights Reserved.",
