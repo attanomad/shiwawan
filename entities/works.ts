@@ -13,6 +13,7 @@ export interface Work {
   status: WorkStatus;
   kickedOffOn?: Date;
   deliveredOn?: Date;
+  url?: string;
 }
 
 export const workList: Array<Work> = [
@@ -51,6 +52,7 @@ export const workList: Array<Work> = [
     status: WorkStatus.Delivered,
     kickedOffOn: new Date("2024-08-01:00:00+0700"),
     deliveredOn: new Date("2024-09-24:00:00+0700"),
+    url: "https://thapprayaproperty.shiwawan.com/",
   },
   {
     id: "4",

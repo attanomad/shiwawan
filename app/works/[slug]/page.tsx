@@ -28,7 +28,7 @@ export default function WorkDetailPage({
       }}
     >
       <BackButton />
-      <div className="flex flex-col gap-2 text-white">
+      <div className="flex flex-col items-start gap-2 text-white">
         <h1 className="text-[2rem] md:text-5xl lg:text-[4rem] lg:text-7xl font-bold drop-shadow-[0_0_20px_rgba(0,0,0,.5)]">
           {work.title}
         </h1>
@@ -52,6 +52,15 @@ export default function WorkDetailPage({
             <p>Launched on: {formatDate(work.deliveredOn)}</p>
           )}
         </div>
+        {work.url && (
+          <a
+            href={work.url}
+            target="_blank"
+            className="bg-black/20 rounded-lg px-2 md:px-4 py-1 md:py-2 !leading-normal"
+          >
+            Visit website
+          </a>
+        )}
       </div>
     </header>
   );
