@@ -1,15 +1,17 @@
 "use client";
 
 import { ArrowLeft } from "@/components/icons/ArrowLeft";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function BackButton() {
   const router = useRouter();
   const pathname = usePathname();
+  const locale = useLocale();
 
   return (
     <>
-      {pathname !== "/" && (
+      {pathname !== `/${locale}` && (
         <button onClick={() => router.back()}>
           <ArrowLeft className="size-6 md:size-8 drop-shadow-[0_0_5px_rgba(0,0,0,.5)]" />
         </button>

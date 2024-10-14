@@ -1,9 +1,11 @@
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ReactNode, SVGProps } from "react";
 import { HomeOutline } from "../icons/HomeOutline";
 import BackButton from "./BackButton";
 
 interface NavMenu {
+  id: string;
   title: string;
   path: string;
   icon?: (props: SVGProps<SVGSVGElement>) => ReactNode;
@@ -11,14 +13,16 @@ interface NavMenu {
 }
 
 const menuList: NavMenu[] = [
-  { title: "Home", path: "/", icon: HomeOutline },
-  { title: "Works", path: "/#works" },
-  { title: "Testimonials", path: "/#testimonials" },
-  { title: "Why Us?", path: "/#why" },
-  { title: "Process", path: "/#process" },
+  { id: "home", title: "Home", path: "/", icon: HomeOutline },
+  { id: "works", title: "Works", path: "/#works" },
+  { id: "testimonials", title: "Testimonials", path: "/#testimonials" },
+  { id: "why", title: "Why Us?", path: "/#why" },
+  { id: "process", title: "Process", path: "/#process" },
 ];
 
-export default function NavBar() {
+export default async function NavBar() {
+  const t = await getTranslations("NavItems");
+
   return (
     <div className="fixed left-0 bottom-0 w-full flex justify-center items-center z-[9999]">
       <nav className="absolute bottom-4 flex items-center py-2 md:py-4 px-3 md:px-[1.125rem] lg:px-8 rounded-[2rem] bg-[#C7C7C7]/80 text-white">
@@ -32,22 +36,22 @@ export default function NavBar() {
                 title = m.icon ? (
                   <>
                     {m.icon}
-                    {m.title}
+                    {t(m.id)}
                   </>
                 ) : (
-                  m.title
+                  t("m.id")
                 );
                 break;
 
               case "title":
-                title = m.title;
+                title = t("m.id");
 
               case "icon":
               default:
                 title = m.icon ? (
                   <m.icon className="size-6 md:size-8 drop-shadow-[0_0_5px_rgba(0,0,0,.5)]" />
                 ) : (
-                  m.title
+                  t(m.id)
                 );
                 break;
             }

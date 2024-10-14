@@ -28,5 +28,12 @@
     "titleBg": "testimonials"
   },
   "WhySection": { "title": "Why Shiwawan?", "titleBg": "why" },
-  "SectionProcess": { "title": "Our Process", "titleBg": "process" }
+  "SectionProcess": { "title": "Our Process", "titleBg": "process" },
+  "NavItems": {
+    "home": "Home",
+    "works": "Works",
+    "testimonials": "Testimonials",
+    "why": "Why",
+    "process": "Process"
+  }
 }
