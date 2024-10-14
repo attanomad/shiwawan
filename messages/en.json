@@ -22,5 +22,11 @@
   "WorkSection": {
     "title": "Some of our works",
     "titleBg": "works"
-  }
+  },
+  "TestimonialsSection": {
+    "title": "Our Happy Clients",
+    "titleBg": "testimonials"
+  },
+  "WhySection": { "title": "Why Shiwawan?", "titleBg": "why" },
+  "SectionProcess": { "title": "Our Process", "titleBg": "process" }
 }

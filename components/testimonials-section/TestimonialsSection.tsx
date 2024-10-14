@@ -1,16 +1,19 @@
 import { SupportedLocale } from "@/entities/common";
 import { Testimonial, testimonialList } from "@/entities/testimonials";
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Section from "../section/Section";
 
 export default async function TestimonialsSection() {
-  const content = await fetchPageContent(SupportedLocale.Th);
+  const locale = (await getLocale()) as SupportedLocale;
+  const t = await getTranslations("TestimonialsSection");
+  const content = await fetchPageContent(locale);
   const testimonialChunkList = chunkArray(content.testimonialList, 3);
 
   return (
     <Section
-      title={content.title}
-      titleBg={content.titleBg}
+      title={t("title")}
+      titleBg={t("titleBg")}
       id="testimonials"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-16 gap-4 md:gap-8 bg-[radial-gradient(closest-side,var(--color-accent-four)_0%,white_100%)]">
@@ -71,8 +74,6 @@ function chunkArray<T = unknown>(
 
 async function fetchPageContent(locale?: SupportedLocale) {
   return {
-    title: "นี่คือคำบอกเล่าจากลูกค้าที่น่ารักของชิวาวัน",
-    titleBg: "testimonials",
     testimonialList: locale
       ? testimonialList.filter((t) => t.locale === locale)
       : testimonialList,

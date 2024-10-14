@@ -1,14 +1,17 @@
 import { SupportedLocale } from "@/entities/common";
 import { Reason, reasonList } from "@/entities/why";
+import { getLocale, getTranslations } from "next-intl/server";
 import Section from "../section/Section";
 
 export default async function WhySection() {
-  const content = await fetchPageContent(SupportedLocale.Th);
+  const locale = (await getLocale()) as SupportedLocale;
+  const t = await getTranslations("WhySection");
+  const content = await fetchPageContent(locale);
 
   return (
     <Section
-      title={content.title}
-      titleBg={content.titleBg}
+      title={t("title")}
+      titleBg={t("titleBg")}
       id="why"
     >
       {content.reasonList.map((r, idx) => (
@@ -60,8 +63,6 @@ function ReasonItem({
 
 async function fetchPageContent(locale?: SupportedLocale) {
   return {
-    title: "ทำไมต้องเป็นชิวาวัน?",
-    titleBg: "why",
     reasonList: locale
       ? reasonList.filter((r) => r.locale === locale)
       : reasonList,

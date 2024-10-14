@@ -22,5 +22,11 @@
   "WorkSection": {
     "title": "ตัวอย่างผลงานของเรา",
     "titleBg": "works"
-  }
+  },
+  "TestimonialsSection": {
+    "title": "นี่คือคำบอกเล่าจากลูกค้าที่น่ารักของชิวาวัน",
+    "titleBg": "testimonials"
+  },
+  "WhySection": { "title": "ทำไมต้องเป็นชิวาวัน?", "titleBg": "why" },
+  "SectionProcess": { "title": "การทำงานของชิวาวัน", "titleBg": "process" }
 }

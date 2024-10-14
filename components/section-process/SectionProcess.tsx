@@ -1,17 +1,20 @@
 import { SupportedLocale } from "@/entities/common";
 import { processList } from "@/entities/process";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Caveat } from "next/font/google";
 import Section from "../section/Section";
 
 const caveatFont = Caveat({ subsets: ["latin"] });
 
 export default async function SectionProcess() {
-  const content = await fetchPageContent(SupportedLocale.Th);
+  const locale = (await getLocale()) as SupportedLocale;
+  const t = await getTranslations("SectionProcess");
+  const content = await fetchPageContent(locale);
 
   return (
     <Section
-      title={content.title}
-      titleBg={content.titleBg}
+      title={t("title")}
+      titleBg={t("titleBg")}
       id="process"
     >
       <div className="grid md:grid-cols-2 px-8 md:px-12 xl:px-16 gap-8 md:gap-12 xl:gap-16">
@@ -53,8 +56,6 @@ export default async function SectionProcess() {
 
 async function fetchPageContent(locale?: SupportedLocale) {
   return {
-    title: "การทำงานของชิวาวัน",
-    titleBg: "process",
     processList: locale
       ? processList.filter((p) => p.locale === locale)
       : processList,
