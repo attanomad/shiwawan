@@ -7,7 +7,7 @@ const EffectShiwawan: SwiperModule = ({ extendParams, swiper, on, params }) => {
   });
 
   const setTranslate = () => {
-    console.log("setTranslate()");
+    // console.log("setTranslate()");
 
     const { el, slides, activeIndex, virtual } = swiper;
 
@@ -17,7 +17,7 @@ const EffectShiwawan: SwiperModule = ({ extendParams, swiper, on, params }) => {
 
       if (slideIndex === activeIndex) {
         const { width } = slideEl.getBoundingClientRect();
-        console.log("width: ", width);
+        // console.log("width: ", width);
       }
     }
   };
@@ -29,7 +29,7 @@ const EffectShiwawan: SwiperModule = ({ extendParams, swiper, on, params }) => {
     on,
     setTranslate,
     setTransition(duration) {
-      console.log("setTransition()", duration);
+      // console.log("setTransition()", duration);
     },
   });
 };
