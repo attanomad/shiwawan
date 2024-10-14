@@ -8,14 +8,14 @@ export const socialNetworks: SocialNetwork[] = [
   {
     id: "ig",
     title: "Instagram",
-    url: "https://instagram.com/@shiwawan.web",
+    url: "https://instagram.com/shiwawan.web",
   },
   {
     id: "fb",
     title: "Facebook",
     url: "https://facebook.com/@shiwawan.web",
   },
-  { id: "x", title: "X (Twitter)", url: "https://x.com/@shiwawanweb" },
+  { id: "x", title: "X (Twitter)", url: "https://x.com/shiwawanweb" },
   { id: "line", title: "Line", url: "https://lin.ee/P31hQii" },
 ];
 
