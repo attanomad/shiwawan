@@ -1,5 +1,6 @@
 import { socialNetworks } from "@/content/social-network";
 import { getTranslations } from "next-intl/server";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const content = {
   social: {
@@ -29,8 +30,12 @@ export default async function Footer() {
         <p className="text-xs md:text-base">{copyright}</p>
       </div>
 
+      <div className="px-8 xl:px-16 py-4">
+        <LocaleSwitcher />
+      </div>
+
       {/* Nav Bar Placeholder */}
-      <div className="w-full h-[50px]"></div>
+      <div className="w-full h-[72px] md:h-[96px]"></div>
     </footer>
   );
 }

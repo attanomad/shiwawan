@@ -47,10 +47,10 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           {children}
+          <SectionCta />
+          <Footer />
+          <NavBar />
         </NextIntlClientProvider>
-        <SectionCta />
-        <Footer />
-        <NavBar />
       </body>
     </html>
   );

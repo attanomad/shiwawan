@@ -35,5 +35,10 @@
     "testimonials": "คำชม",
     "why": "ทำไม",
     "process": "ขั้นตอน"
+  },
+  "LocaleSwitcher": {
+    "label": "เปลี่ยนภาษา",
+    "th": "ภาษาไทย",
+    "en": "English"
   }
 }

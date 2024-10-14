@@ -35,5 +35,10 @@
     "testimonials": "Testimonials",
     "why": "Why",
     "process": "Process"
+  },
+  "LocaleSwitcher": {
+    "label": "Change Language",
+    "th": "Thai (ภาษาไทย)",
+    "en": "English"
   }
 }
