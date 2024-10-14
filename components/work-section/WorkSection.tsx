@@ -1,6 +1,8 @@
 "use client";
 
+import { SupportedLocale } from "@/entities/common";
 import { Work, workList } from "@/entities/works";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -12,16 +14,16 @@ import EffectShiwawan from "./shiwawan-effect";
 import "./styles.css";
 
 const content = {
-  title: "ตัวอย่างผลงานของเรา",
-  titleBg: "works",
   workList,
 };
 
 export default function WorkSection() {
+  const t = useTranslations("WorkSection");
+
   return (
     <Section
-      title={content.title}
-      titleBg={content.titleBg}
+      title={t("title")}
+      titleBg={t("titleBg")}
       id="works"
     >
       <div>
@@ -78,20 +80,10 @@ export default function WorkSection() {
   );
 }
 
-const WorkSlide = ({ id, slug, title, tagline, imageUrl, cta }: Work) => {
-  // const swiper = useSwiper();
+const WorkSlide = ({ id, slug, content, imageUrl }: Work) => {
+  const locale = useLocale();
+  const { title, tagline, cta } = content[locale as SupportedLocale];
   const { isActive } = useSwiperSlide();
-
-  // useEffect(() => {
-  //   if (
-  //     isActive &&
-  //     typeof swiper.setTranslate === "function" &&
-  //     typeof swiper.translate === "number"
-  //   ) {
-  //     console.log("ok", swiper);
-  //     // setTranslate(translate - (614 - 307) / 2);
-  //   }
-  // }, [isActive, swiper.setTranslate, swiper.translate]);
 
   return (
     <div

@@ -18,5 +18,9 @@
   "SectionCta": {
     "title": "มีโปรเจกต์ในใจใช่ไหม?",
     "cta": "ทักเลย!"
+  },
+  "WorkSection": {
+    "title": "ตัวอย่างผลงานของเรา",
+    "titleBg": "works"
   }
 }

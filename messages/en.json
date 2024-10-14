@@ -18,5 +18,9 @@
   "SectionCta": {
     "title": "Got a project in mind?",
     "cta": "Contact us now!"
+  },
+  "WorkSection": {
+    "title": "Some of our works",
+    "titleBg": "works"
   }
 }

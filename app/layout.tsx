@@ -3,7 +3,7 @@ import NavBar from "@/components/nav-bar/NavBar";
 import SectionCta from "@/components/section-cta/SectionCta";
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getLocale, getMessages } from "next-intl/server";
 import { Inter, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 
@@ -37,10 +37,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   const messages = await getMessages();
 
   return (
-    <html lang="th">
+    <html lang={locale}>
       <body
         className={`${inter.variable} ${notoSansThai.variable} ${notoSansThai.className}`}
       >
