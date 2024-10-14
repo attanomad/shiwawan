@@ -1,6 +1,7 @@
 import { socialNetworkIndex } from "@/content/social-network";
 import { getTranslations } from "next-intl/server";
 import SectionTitle from "../section/SectionTitle";
+import CreativeBubble from "./CreativeBubble";
 
 const lineSocialNetwork = socialNetworkIndex["line"];
 
@@ -8,8 +9,8 @@ export default async function SectionCta() {
   const t = await getTranslations("SectionCta");
 
   return (
-    <section className="flex flex-col px-4 md:px-12 lg:px-16 py-16 md:py-24 lg:py-32 gap-8 md:gap-12 lg:gap-16 bg-accent-six">
-      <SectionTitle>{t("title")}</SectionTitle>
+    <section className="flex flex-col relative px-4 md:px-12 lg:px-16 py-16 md:py-24 lg:py-32 gap-8 md:gap-12 lg:gap-16 bg-accent-six">
+      <SectionTitle className="z-[1]">{t("title")}</SectionTitle>
       <div className="flex flex-col justify-center items-center gap-2 md:gap-4 xl:gap-[37px]">
         <a
           href={lineSocialNetwork.url}
@@ -19,6 +20,7 @@ export default async function SectionCta() {
           {t("cta")}
         </a>
       </div>
+      <CreativeBubble className="size-32 md:size-48 lg:size-72 absolute top-10 -rotate-45 translate-y-10 opacity-80 z-0" />
     </section>
   );
 }
