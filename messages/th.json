@@ -1,4 +1,7 @@
 {
+  "LocaleLayout": {
+    "title": "Shiwawan Studio"
+  },
   "HomePage": {
     "title": "Shiwawan Studio"
   },
@@ -40,5 +43,18 @@
     "label": "เปลี่ยนภาษา",
     "th": "ภาษาไทย",
     "en": "English"
+  },
+  "WorkDetailPage": {
+    "status": "สถานะ",
+    "kickedoffOn": "เริ่ม",
+    "launchedOn": "ส่งมอบ",
+    "websiteCta": "ดูเว็บไซต์",
+    "statusEnum": {
+      "IN_PROGRESS": "กำลังดำเนินการ",
+      "DELIVERED": "ส่งมอบแล้ว"
+    }
+  },
+  "BackButton": {
+    "label": "กลับ"
   }
 }

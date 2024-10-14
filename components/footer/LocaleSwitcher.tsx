@@ -16,7 +16,7 @@ export default function LocaleSwitcher() {
           key={cur}
           value={cur}
         >
-          {t(cur, { locale: cur })}
+          {t(cur)}
         </option>
       ))}
     </LocaleSwitcherSelect>

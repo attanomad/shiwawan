@@ -1,4 +1,6 @@
+import { SupportedLocale } from "@/entities/common";
 import { workList } from "@/entities/works";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BackButton from "./BackButton";
@@ -7,14 +9,22 @@ export async function generateStaticParams() {
   return workList.map(({ id }) => ({ slug: id }));
 }
 
-export default function WorkDetailPage({
+export default async function WorkDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
+  const locale = await getLocale();
+  const t = await getTranslations("WorkDetailPage");
   const work = workList.find((w) => w.slug === params.slug);
 
   if (!work) {
+    notFound();
+  }
+
+  const content = work.content[locale as SupportedLocale];
+
+  if (!content) {
     notFound();
   }
 
@@ -30,7 +40,7 @@ export default function WorkDetailPage({
       <BackButton />
       <div className="flex flex-col items-start gap-2 text-white">
         <h1 className="text-[2rem] md:text-5xl lg:text-[4rem] lg:text-7xl font-bold drop-shadow-[0_0_20px_rgba(0,0,0,.5)]">
-          {work.title}
+          {content.title}
         </h1>
         <div className="flex gap-2">
           {work.tags.map((t, i) => (
@@ -44,12 +54,18 @@ export default function WorkDetailPage({
           ))}
         </div>
         <div className="flex flex-col gap-1 text-white text-sm md:text-xl">
-          <p>Status: {work.status}</p>
+          <p>
+            {t("status")}: {t(`statusEnum.${work.status}`)}
+          </p>
           {work.kickedOffOn && (
-            <p>Kicked off on: {formatDate(work.kickedOffOn)}</p>
+            <p>
+              {t("kickedoffOn")}: {formatDate(work.kickedOffOn)}
+            </p>
           )}
           {work.deliveredOn && (
-            <p>Launched on: {formatDate(work.deliveredOn)}</p>
+            <p>
+              {t("launchedOn")}: {formatDate(work.deliveredOn)}
+            </p>
           )}
         </div>
         {work.url && (
@@ -58,7 +74,7 @@ export default function WorkDetailPage({
             target="_blank"
             className="bg-black/20 rounded-lg px-2 md:px-4 py-1 md:py-2 !leading-normal"
           >
-            Visit website
+            {t("websiteCta")}
           </a>
         )}
       </div>
