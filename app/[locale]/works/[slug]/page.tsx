@@ -1,6 +1,6 @@
 import { SupportedLocale } from "@/entities/common";
 import { workList } from "@/entities/works";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BackButton from "./BackButton";
@@ -10,13 +10,14 @@ export async function generateStaticParams() {
 }
 
 export default async function WorkDetailPage({
-  params,
+  params: { locale, slug },
 }: {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }) {
-  const locale = await getLocale();
-  const t = await getTranslations("WorkDetailPage");
-  const work = workList.find((w) => w.slug === params.slug);
+  unstable_setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: "WorkDetailPage" });
+  const work = workList.find((w) => w.slug === slug);
 
   if (!work) {
     notFound();
