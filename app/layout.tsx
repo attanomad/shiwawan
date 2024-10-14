@@ -2,6 +2,8 @@ import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/nav-bar/NavBar";
 import SectionCta from "@/components/section-cta/SectionCta";
 import type { Metadata, Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { Inter, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 
@@ -30,17 +32,21 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const messages = await getMessages();
+
   return (
     <html lang="th">
       <body
         className={`${inter.variable} ${notoSansThai.variable} ${notoSansThai.className}`}
       >
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         <SectionCta />
         <Footer />
         <NavBar />

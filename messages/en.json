@@ -1,0 +1,18 @@
+{
+  "HomePage": {
+    "title": "Shiwawan Studio"
+  },
+  "HeroSection": {
+    "heading": "Reach More Customers with a Website Tailored Specifically for Your Business",
+    "tagline": "Enhance your brand image and build credibility with a website that reflects your brand identity and communicates effectively with your target audience, designed and developed by professional web designers and developers.",
+    "cta": "Contact us now!",
+    "subCta": "View our work",
+    "bgText": "shiwawan"
+  },
+  "Footer": {
+    "social": {
+      "title": "Find us on"
+    },
+    "copyRightsReserved": "All Rights Reserved"
+  }
+}
